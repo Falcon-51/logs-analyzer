@@ -24,6 +24,8 @@ popular_url=$(awk '{print $7}' access.log | sort | uniq -c | sort -nr | head -n 
 
 # Создание отчета в report.txt
 {
+    echo "Отчёт о логе веб-сервера"                                                                                                                    
+    echo "=========================" 
     echo "Общее количество запросов: $total_requests"
     echo "Количество уникальных IP-адресов: $unique_ips"
     echo "Количество запросов по методам:"
