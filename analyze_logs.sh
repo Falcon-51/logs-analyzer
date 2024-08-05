@@ -17,7 +17,7 @@ total_requests=$(wc -l < access.log)
 unique_ips=$(awk '{print $1}' access.log | sort -u | wc -l)
 
 # Подсчет количества запросов по методам с использованием awk
-methods_count=$(awk '{print $6}' access.log | sort | uniq -c)
+methods_count=$(awk '{gsub(/"/, ""); print $6}' access.log | sort | uniq -c)
 
 # Поиск самого популярного URL с использованием awk
 popular_url=$(awk '{print $7}' access.log | sort | uniq -c | sort -nr | head -n 1)
