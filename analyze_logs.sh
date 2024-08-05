@@ -22,10 +22,10 @@ methods_count=$(awk '{gsub(/"/, ""); print $6}' access.log | sort | uniq -c)
 # Поиск самого популярного URL с использованием awk
 popular_url=$(awk '{print $7}' access.log | sort | uniq -c | sort -nr | head -n 1)
 
-# Создание отчета в report.txt
+# Создание отчёта в report.txt
 {
-    echo "Отчёт о логе веб-сервера"                                                                                                                    
-    echo "=========================" 
+    echo "Отчёт о логе веб-сервера"
+    echo "========================="
     echo "Общее количество запросов: $total_requests"
     echo "Количество уникальных IP-адресов: $unique_ips"
     echo "Количество запросов по методам:"
